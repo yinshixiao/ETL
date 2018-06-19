@@ -12,12 +12,22 @@ import com.open.etl.util.CommonResult;
 @RequestMapping("/mssql-to-mysql")
 public class TestController {
 
-	@RequestMapping("/saveSqlInfo")
-	public CommonResult getSqlServerInfo(DbConnInfo dbConnInfo,HttpSession session) {
+	@RequestMapping("/saveMssqlInfo")
+	public CommonResult saveMssqlInfo(DbConnInfo dbConnInfo,HttpSession session) {
 		System.out.println(dbConnInfo.toString());
 		session.setAttribute("mssqlConnInfo", dbConnInfo);
 		return new CommonResult();
 	}
 	
+	@RequestMapping("/saveMysqlInfo")
+	public CommonResult saveMysqlInfo(DbConnInfo dbConnInfo,HttpSession session) {
+		System.out.println(dbConnInfo.toString());
+		session.setAttribute("mysqlConnInfo", dbConnInfo);
+		return new CommonResult();
+	}
+	
 	
 }
+	
+	
+
